@@ -47,10 +47,11 @@ header{
 }
 
 .logo img{
-    width: 180px;
-    height: 90px;
+    width: 220px;
+    height: 110px;
     object-fit: contain;
     display: block;
+}
 }
 }
 
