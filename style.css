@@ -41,11 +41,13 @@ header{
 }
 
 .logo img{
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    background:white;
-    padding:6px;
+    width:auto;
+    height:75px;
+    border-radius:0;
+    background:transparent;
+    padding:0;
+    display:block;
+}
 }
 
 .logo h2{
