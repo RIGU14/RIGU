@@ -47,14 +47,11 @@ header{
 }
 
 .logo img{
-   width: 130px;
-    height: auto;
-    display: block;
+    width: 180px;
+    height: 90px;
     object-fit: contain;
-    background: transparent;
-    padding: 0;
-    margin-left: 10px;
-    border-radius: 0;
+    display: block;
+}
 }
 
 .logo h2{
