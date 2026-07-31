@@ -1,312 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CartAura</title>
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
+<title>CartAura | Online Shopping</title>
 
-body{
-background:#f5f5f5;
-}
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-header{
-background:#2874f0;
-color:white;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 40px;
-position:sticky;
-top:0;
-z-index:1000;
-}
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-.logo{
-display:flex;
-align-items:center;
-gap:10px;
-}
-
-.logo img{
-width:45px;
-height:45px;
-border-radius:50%;
-background:white;
-padding:5px;
-}
-
-.logo h2{
-font-size:28px;
-}
-
-.search{
-width:40%;
-}
-
-.search input{
-width:100%;
-padding:10px;
-border:none;
-border-radius:5px;
-font-size:16px;
-}
-
-.icons{
-display:flex;
-gap:12px;
-}
-
-.icons button{
-background:white;
-color:#2874f0;
-border:none;
-padding:10px 15px;
-border-radius:5px;
-font-weight:bold;
-cursor:pointer;
-transition:.3s;
-}
-
-.icons button:hover{
-background:#ffe500;
-}
-
-.banner{
-background:linear-gradient(90deg,#2874f0,#4fa3ff);
-color:white;
-text-align:center;
-padding:40px 20px;
-}
-
-.banner h1{
-font-size:42px;
-margin-bottom:10px;
-}
-
-.banner p{
-font-size:20px;
-}
-</style>
 </head>
 
 <body>
 
 <header>
 
+<div class="top-header">
+
 <div class="logo">
-<img src="https://via.placeholder.com/45.png?text=C">
+
+<img src="logo.png" alt="CartAura Logo">
+
 <h2>CartAura</h2>
+
 </div>
 
-<div class="search">
-<input type="text" placeholder="Search Products...">
+<div class="search-box">
+
+<input type="text" placeholder="Search for Products, Brands and More...">
+
+<button>
+<i class="fa-solid fa-magnifying-glass"></i>
+</button>
+
 </div>
 
-<div class="icons">
-<button>❤️ Wishlist</button>
-<button>👤 Login</button>
-<button>🛒 Cart</button>
+<div class="right-menu">
+
+<a href="#">
+<i class="fa-regular fa-heart"></i>
+Wishlist
+</a>
+
+<a href="#">
+<i class="fa-regular fa-user"></i>
+Login
+</a>
+
+<a href="#">
+<i class="fa-solid fa-cart-shopping"></i>
+Cart
+</a>
+
 </div>
+
+</div>
+
+<nav class="category-bar">
+
+<a href="#">Fashion</a>
+
+<a href="#">Electronics</a>
+
+<a href="#">Mobiles</a>
+
+<a href="#">Home</a>
+
+<a href="#">Beauty</a>
+
+<a href="#">Kitchen</a>
+
+<a href="#">Sports</a>
+
+<a href="#">More</a>
+
+</nav>
 
 </header>
 
-<section class="banner">
+<section class="hero">
+
+<div class="hero-text">
+
 <h1>Welcome to CartAura</h1>
-<p>Everything You Need, All in One Store</p>
+
+<p>India's Smart Online Shopping Destination</p>
+
+<button>Shop Now</button>
+
+</div>
+
+<div class="hero-image">
+
+<img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=900"
+alt="Shopping">
+
+</div>
+
 </section>
+
 <section class="products">
 
-<div class="card">
+<h2 class="section-title">
 
-<img src="https://picsum.photos/300/220?random=1" alt="Wireless Earbuds">
+Trending Products
 
-<h3>Wireless Earbuds</h3>
+</h2>
 
-<div class="rating">
-<span class="stars">★★★★★</span>
-<span class="score">4.8</span>
-</div>
+<div class="product-grid">
+<div class="product-card">
 
-<p class="price">₹999</p>
+    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" alt="Sports Shoes">
 
-<div class="buttons">
-<button class="cart-btn">🛒 Add to Cart</button>
-<button class="buy-btn">⚡ Buy Now</button>
-</div>
+    <h3>Sports Shoes</h3>
 
-</div>
+    <div class="rating">
+        <span class="stars">★★★★★</span>
+        <span class="rating-text">4.8 (2,547)</span>
+    </div>
 
-<style>
+    <p class="price">₹1,499 <span>₹2,499</span></p>
 
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
-padding:30px;
-}
-
-.card{
-background:#fff;
-border-radius:12px;
-padding:15px;
-box-shadow:0 2px 10px rgba(0,0,0,.12);
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-}
-
-.card img{
-width:100%;
-border-radius:10px;
-}
-
-.card h3{
-margin:12px 0 8px;
-}
-
-.rating{
-display:flex;
-align-items:center;
-gap:8px;
-margin:8px 0;
-}
-
-.stars{
-color:#FFC107;
-font-size:20px;
-letter-spacing:2px;
-text-shadow:0 1px 2px rgba(0,0,0,.25);
-}
-
-.score{
-background:#0f9d58;
-color:#fff;
-padding:2px 8px;
-border-radius:12px;
-font-size:13px;
-font-weight:bold;
-}
-
-.price{
-font-size:22px;
-font-weight:bold;
-margin:12px 0;
-}
-
-.buttons{
-display:flex;
-gap:10px;
-}
-
-.cart-btn,
-.buy-btn{
-flex:1;
-border:none;
-padding:12px;
-border-radius:8px;
-font-weight:bold;
-cursor:pointer;
-}
-
-.cart-btn{
-background:#2874f0;
-color:white;
-}
-
-.buy-btn{
-background:#fb641b;
-color:white;
-}
-
-</style>
-<div class="card">
-
-<img src="https://picsum.photos/300/220?random=2" alt="Sports Shoes">
-
-<h3>Sports Shoes</h3>
-
-<div class="rating">
-<span class="stars">★★★★★</span>
-<span class="score">4.7</span>
-</div>
-
-<p class="price">₹1,499</p>
-
-<div class="buttons">
-<button class="cart-btn">🛒 Add to Cart</button>
-<button class="buy-btn">⚡ Buy Now</button>
-</div>
+    <div class="buttons">
+        <button class="cart-btn">🛒 Add to Cart</button>
+        <button class="buy-btn">⚡ Buy Now</button>
+    </div>
 
 </div>
 
-<div class="card">
+<div class="product-card">
 
-<img src="https://picsum.photos/300/220?random=3" alt="Smart Watch">
+    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500" alt="Smart Watch">
 
-<h3>Smart Watch</h3>
+    <h3>Smart Watch</h3>
 
-<div class="rating">
-<span class="stars">★★★★★</span>
-<span class="score">4.9</span>
+    <div class="rating">
+        <span class="stars">★★★★★</span>
+        <span class="rating-text">4.9 (1,876)</span>
+    </div>
+
+    <p class="price">₹2,999 <span>₹3,999</span></p>
+
+    <div class="buttons">
+        <button class="cart-btn">🛒 Add to Cart</button>
+        <button class="buy-btn">⚡ Buy Now</button>
+    </div>
+
 </div>
 
-<p class="price">₹1,999</p>
+<div class="product-card">
 
-<div class="buttons">
-<button class="cart-btn">🛒 Add to Cart</button>
-<button class="buy-btn">⚡ Buy Now</button>
+    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" alt="Headphones">
+
+    <h3>Wireless Headphones</h3>
+
+    <div class="rating">
+        <span class="stars">★★★★★</span>
+        <span class="rating-text">4.7 (3,102)</span>
+    </div>
+
+    <p class="price">₹999 <span>₹1,699</span></p>
+
+    <div class="buttons">
+        <button class="cart-btn">🛒 Add to Cart</button>
+        <button class="buy-btn">⚡ Buy Now</button>
+    </div>
+
+</div>
+<div class="product-card">
+
+    <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500" alt="Travel Bag">
+
+    <h3>Travel Backpack</h3>
+
+    <div class="rating">
+        <span class="stars">★★★★★</span>
+        <span class="rating-text">4.8 (1,254)</span>
+    </div>
+
+    <p class="price">₹1,299 <span>₹1,999</span></p>
+
+    <div class="buttons">
+        <button class="cart-btn">🛒 Add to Cart</button>
+        <button class="buy-btn">⚡ Buy Now</button>
+    </div>
+
 </div>
 
-</div>
+<div class="product-card">
 
-<div class="card">
+    <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=500" alt="Perfume">
 
-<img src="https://picsum.photos/300/220?random=4" alt="Travel Bag">
+    <h3>Premium Perfume</h3>
 
-<h3>Travel Bag</h3>
+    <div class="rating">
+        <span class="stars">★★★★★</span>
+        <span class="rating-text">4.9 (3,221)</span>
+    </div>
 
-<div class="rating">
-<span class="stars">★★★★★</span>
-<span class="score">4.6</span>
-</div>
+    <p class="price">₹799 <span>₹1,299</span></p>
 
-<p class="price">₹899</p>
+    <div class="buttons">
+        <button class="cart-btn">🛒 Add to Cart</button>
+        <button class="buy-btn">⚡ Buy Now</button>
+    </div>
 
-<div class="buttons">
-<button class="cart-btn">🛒 Add to Cart</button>
-<button class="buy-btn">⚡ Buy Now</button>
 </div>
 
 </div>
 
 </section>
-<footer style="background:#2874f0;color:white;text-align:center;padding:30px;margin-top:40px;">
+
+<footer>
+
+<div class="footer-content">
 
 <h2>CartAura</h2>
 
-<p>Your One-Stop Online Shopping Store</p>
-
-<br>
+<p>Your Trusted Online Shopping Store</p>
 
 <p>📞 9915404434</p>
 
 <p>📧 Cartaura7@gmail.com</p>
 
-<br>
-
 <p>© 2026 CartAura. All Rights Reserved.</p>
 
+</div>
+
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
