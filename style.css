@@ -40,15 +40,26 @@ header{
     gap:12px;
 }
 
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .logo img{
- .logo img{
     width: 150px;
     height: auto;
     display: block;
+    object-fit: contain;
     background: transparent;
     padding: 0;
+    margin-left: 10px;
     border-radius: 0;
-    object-fit: contain;
+}
+
+.logo h2{
+    display: none;
+}
 }
 }
 }
