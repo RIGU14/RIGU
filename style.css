@@ -290,15 +290,17 @@ header{
     color:white;
 }
 
+
 .buy-btn{
-    background:#ff9800;
+    background:#0b5ed7;
     color:white;
+    border:2px solid #0b5ed7;
 }
 
 .buy-btn:hover{
-    background:#e68900;
+    background:#084298;
+    border-color:#084298;
 }
-
 /* ===========================
    FOOTER
 =========================== */
