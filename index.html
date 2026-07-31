@@ -6,7 +6,6 @@
 <title>CartAura</title>
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -20,12 +19,11 @@ background:#f1f3f6;
 
 header{
 background:#2874f0;
-color:white;
 padding:15px;
 display:flex;
 align-items:center;
 justify-content:space-between;
-flex-wrap:wrap;
+color:white;
 }
 
 .logo{
@@ -37,47 +35,60 @@ font-weight:bold;
 width:45%;
 padding:10px;
 border:none;
-border-radius:4px;
+border-radius:5px;
+font-size:16px;
+}
+
+.icons{
+display:flex;
+gap:20px;
+font-size:18px;
 }
 
 nav{
 background:white;
 display:flex;
 justify-content:center;
-gap:25px;
-padding:12px;
-font-weight:bold;
+gap:30px;
+padding:15px;
 box-shadow:0 2px 5px rgba(0,0,0,.1);
-flex-wrap:wrap;
+}
+
+nav a{
+text-decoration:none;
+color:#333;
+font-weight:bold;
 }
 
 .banner{
-background:linear-gradient(90deg,#2874f0,#00bcd4);
+height:320px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:linear-gradient(90deg,#0066ff,#00c6ff);
 color:white;
-text-align:center;
-padding:50px 20px;
 }
 
 .banner h1{
-font-size:42px;
+font-size:55px;
+margin-bottom:15px;
 }
 
 .banner p{
-margin-top:10px;
-font-size:18px;
+font-size:22px;
+margin-bottom:20px;
 }
 
-.shopbtn{
-margin-top:20px;
-padding:14px 35px;
-background:#ff9f00;
+.banner button{
+padding:15px 40px;
+background:orange;
 border:none;
+border-radius:6px;
+font-size:20px;
 color:white;
-font-size:18px;
-border-radius:5px;
 cursor:pointer;
 }
-
 .products{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -91,6 +102,11 @@ border-radius:10px;
 padding:15px;
 text-align:center;
 box-shadow:0 2px 8px rgba(0,0,0,.15);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
 }
 
 .card img{
@@ -102,6 +118,7 @@ border-radius:8px;
 
 .card h3{
 margin:10px 0;
+font-size:20px;
 }
 
 .price{
@@ -110,14 +127,19 @@ font-size:22px;
 font-weight:bold;
 }
 
+.rating{
+color:#ff9800;
+margin:8px 0;
+}
+
 .buy{
-margin-top:10px;
 background:#fb641b;
 color:white;
-padding:10px 20px;
+padding:10px 25px;
 border:none;
 border-radius:5px;
 cursor:pointer;
+font-size:16px;
 }
 
 footer{
@@ -127,101 +149,110 @@ text-align:center;
 padding:20px;
 margin-top:30px;
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-
 <div class="logo">CartAura</div>
 
-<input class="search" type="text" placeholder="Search Products">
+<input class="search" type="text" placeholder="Search Products...">
 
+<div class="icons">
+<span>❤️ Wishlist</span>
+<span>🛒 Cart</span>
+</div>
 </header>
 
 <nav>
-
-<div>Fashion</div>
-<div>Electronics</div>
-<div>Shoes</div>
-<div>Kitchen</div>
-<div>Toys</div>
-<div>Beauty</div>
-
+<a href="#">Fashion</a>
+<a href="#">Shoes</a>
+<a href="#">Electronics</a>
+<a href="#">Kitchen</a>
+<a href="#">Beauty</a>
+<a href="#">Toys</a>
 </nav>
 
 <section class="banner">
-
-<h1>Big Sale is Live</h1>
-
-<p>Best Deals Everyday</p>
-
-<button class="shopbtn">Shop Now</button>
-
+<h1>MEGA SALE</h1>
+<p>Up to 70% OFF</p>
+<button>Shop Now</button>
 </section>
 
 <section class="products">
 <div class="card">
-<img src="https://picsum.photos/300/200?random=1">
+<img src="https://picsum.photos/300/200?random=1" alt="Wireless Earbuds">
 <h3>Wireless Earbuds</h3>
+<div class="rating">⭐⭐⭐⭐☆ (4.5)</div>
 <p class="price">₹999</p>
-<button class="buy">Buy Now</button>
+<button class="buy">Add to Cart</button>
 </div>
 
 <div class="card">
-<img src="https://picsum.photos/300/200?random=2">
+<img src="https://picsum.photos/300/200?random=2" alt="Sports Shoes">
 <h3>Sports Shoes</h3>
+<div class="rating">⭐⭐⭐⭐⭐ (4.8)</div>
 <p class="price">₹1,499</p>
-<button class="buy">Buy Now</button>
+<button class="buy">Add to Cart</button>
 </div>
 
 <div class="card">
-<img src="https://picsum.photos/300/200?random=3">
-<h3>Kitchen Mixer</h3>
-<p class="price">₹1,299</p>
-<button class="buy">Buy Now</button>
-</div>
-
-<div class="card">
-<img src="https://picsum.photos/300/200?random=4">
+<img src="https://picsum.photos/300/200?random=3" alt="Smart Watch">
 <h3>Smart Watch</h3>
+<div class="rating">⭐⭐⭐⭐☆ (4.4)</div>
 <p class="price">₹1,999</p>
-<button class="buy">Buy Now</button>
+<button class="buy">Add to Cart</button>
 </div>
+
 <div class="card">
-<img src="https://picsum.photos/300/200?random=5">
+<img src="https://picsum.photos/300/200?random=4" alt="Travel Bag">
 <h3>Travel Bag</h3>
+<div class="rating">⭐⭐⭐⭐☆ (4.3)</div>
 <p class="price">₹899</p>
-<button class="buy">Buy Now</button>
+<button class="buy">Add to Cart</button>
 </div>
-
 <div class="card">
-<img src="https://picsum.photos/300/200?random=6">
-<h3>Kids Toy Set</h3>
-<p class="price">₹699</p>
-<button class="buy">Buy Now</button>
-</div>
-
-<div class="card">
-<img src="https://picsum.photos/300/200?random=7">
+<img src="https://picsum.photos/300/200?random=5" alt="Bluetooth Speaker">
 <h3>Bluetooth Speaker</h3>
-<p class="price">₹1,199</p>
-<button class="buy">Buy Now</button>
+<div class="rating">⭐⭐⭐⭐☆ (4.4)</div>
+<p class="price">₹1,299</p>
+<button class="buy">Add to Cart</button>
 </div>
 
 <div class="card">
-<img src="https://picsum.photos/300/200?random=8">
-<h3>Home Decor Lamp</h3>
+<img src="https://picsum.photos/300/200?random=6" alt="Kitchen Blender">
+<h3>Kitchen Blender</h3>
+<div class="rating">⭐⭐⭐⭐⭐ (4.7)</div>
+<p class="price">₹1,799</p>
+<button class="buy">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/200?random=7" alt="Kids Toy">
+<h3>Kids Toy Set</h3>
+<div class="rating">⭐⭐⭐⭐☆ (4.2)</div>
+<p class="price">₹699</p>
+<button class="buy">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/200?random=8" alt="LED Lamp">
+<h3>LED Table Lamp</h3>
+<div class="rating">⭐⭐⭐⭐⭐ (4.9)</div>
 <p class="price">₹799</p>
-<button class="buy">Buy Now</button>
+<button class="buy">Add to Cart</button>
 </div>
 
 </section>
-
 <footer>
-<p>© 2026 CartAura | All Rights Reserved</p>
+  <h3>CartAura</h3>
+  <p>Your One-Stop Online Shopping Store</p>
+  <br>
+  <p>📧 support@cartaura.store</p>
+  <p>📞 +91 98765 43210</p>
+  <br>
+  <p>© 2026 CartAura. All Rights Reserved.</p>
 </footer>
 
 </body>
