@@ -1,31 +1,39 @@
 console.log("RIGU Loaded");
 
+let allProducts = [];
+let currentIndex = 0;
+const PRODUCTS_PER_LOAD = 24;
+
 fetch("products.json")
-  .then(response => response.json())
-  .then(products => {
+  .then(res => res.json())
+  .then(data => {
+    allProducts = data;
+    loadProducts();
+  });
 
-    const grid = document.querySelector(".product-grid");
-    grid.innerHTML = "";
+function loadProducts() {
 
-    products.forEach(product => {
+  const grid = document.querySelector(".product-grid");
 
-      if (!product.title) return;
+  for (let i = currentIndex; i < currentIndex + PRODUCTS_PER_LOAD && i < allProducts.length; i++) {
 
-      grid.innerHTML += `
-        <div class="product-card">
-          <img src="${product.image}" alt="${product.title}">
-          <h3>${product.title}</h3>
-          <p class="price">₹${product.price}</p>
+    const p = allProducts[i];
 
-          <div class="buttons">
-            <button class="cart-btn">🛒 Add to Cart</button>
-            <button class="buy-btn">⚡ Buy Now</button>
-          </div>
+    if (!p.title) continue;
+
+    grid.innerHTML += `
+      <div class="product-card">
+        <img src="${p.image}" alt="${p.title}">
+        <h3>${p.title}</h3>
+        <p class="price">₹${p.price}</p>
+
+        <div class="buttons">
+          <button class="cart-btn">🛒 Add to Cart</button>
+          <button class="buy-btn">⚡ Buy Now</button>
         </div>
-      `;
-    });
+      </div>
+    `;
+  }
 
-    console.log(products.length + " Products Loaded");
-
-  })
-  .catch(error => console.log(error));
+  currentIndex += PRODUCTS_PER_LOAD;
+}
