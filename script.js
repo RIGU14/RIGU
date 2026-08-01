@@ -1,34 +1,42 @@
+console.log("RIGU Working");
+
 fetch("products.json")
-.then(res => res.json())
-.then(products => {
+  .then(res => res.json())
+  .then(products => {
 
-const productGrid = document.querySelector(".product-grid");
+    const productGrid = document.querySelector(".product-grid");
 
-productGrid.innerHTML = "";
+    productGrid.innerHTML = "";
 
-products.forEach(product => {
+    products.forEach(product => {
 
-productGrid.innerHTML += `
-<div class="product-card">
+      // ਖਾਲੀ ਜਾਂ ਗਲਤ ਪ੍ਰੋਡਕਟ ਛੱਡੋ
+      if (!product.title || product.title === "nan") return;
+      if (!product.image || product.image === "nan") return;
 
-<img src="${product.image}" alt="${product.title}">
+      productGrid.innerHTML += `
+        <div class="product-card">
 
-<h3>${product.title}</h3>
+          <img src="${product.image}" alt="${product.title}">
 
-<p class="price">₹${product.price}</p>
+          <h3>${product.title}</h3>
 
-<div class="buttons">
-<button class="cart-btn">🛒 Add to Cart</button>
-<button class="buy-btn">⚡ Buy Now</button>
-</div>
+          <p class="price">
+            ₹${product.price && product.price !== "nan" ? product.price : "0"}
+          </p>
 
-</div>
-`;
+          <div class="buttons">
+            <button class="cart-btn">🛒 Add to Cart</button>
+            <button class="buy-btn">⚡ Buy Now</button>
+          </div>
 
-});
+        </div>
+      `;
 
-})
-.catch(err => {
-console.log(err);
-alert("Products Load Error");
-});
+    });
+
+  })
+  .catch(err => {
+    console.error(err);
+    alert("Products Load Error");
+  });
