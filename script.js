@@ -1,45 +1,39 @@
-console.log("RIGU Loaded");
+console.log("RIGU Version 2 Loaded");
 
-fetch("products.json")
-  .then(response => response.json())
-  .then(products => {
+const products = [
+  {
+    title: "Sports Shoes",
+    price: 1499,
+    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500"
+  },
+  {
+    title: "Smart Watch",
+    price: 2999,
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"
+  }
+];
 
-    const productGrid = document.querySelector(".product-grid");
+const productGrid = document.querySelector(".product-grid");
 
-    productGrid.innerHTML = "";
+productGrid.innerHTML = "";
 
-    products.slice(0, 30).forEach(product => {
+products.forEach(product => {
 
-      if (!product.title || product.title === "nan") return;
-      if (!product.image || product.image === "nan") return;
+  productGrid.innerHTML += `
+    <div class="product-card">
 
-      const price =
-        product.price && product.price !== "nan"
-          ? product.price
-          : "0";
+      <img src="${product.image}" alt="${product.title}">
 
-      productGrid.innerHTML += `
-        <div class="product-card">
+      <h3>${product.title}</h3>
 
-          <img src="${product.image}" alt="${product.title}">
+      <p class="price">₹${product.price}</p>
 
-          <h3>${product.title}</h3>
+      <div class="buttons">
+        <button class="cart-btn">🛒 Add to Cart</button>
+        <button class="buy-btn">⚡ Buy Now</button>
+      </div>
 
-          <p class="price">₹${price}</p>
+    </div>
+  `;
 
-          <div class="buttons">
-            <button class="cart-btn">🛒 Add to Cart</button>
-            <button class="buy-btn">⚡ Buy Now</button>
-          </div>
-
-        </div>
-      `;
-    });
-
-    console.log("30 Products Loaded Successfully");
-
-  })
-  .catch(error => {
-    console.error(error);
-    alert("Products Load Error");
-  });
+});
