@@ -6,7 +6,7 @@ const productGrid = document.querySelector(".product-grid");
 
 productGrid.innerHTML = "";
 
-products.slice(0,2).forEach(product => {
+products.slice(0,20).forEach(product => {
 
 productGrid.innerHTML += `
 <div class="product-card">
@@ -28,4 +28,7 @@ productGrid.innerHTML += `
 });
 
 })
-.catch(err => console.log(err));
+.catch(err => {
+console.log(err);
+alert("Products Load Error");
+});
