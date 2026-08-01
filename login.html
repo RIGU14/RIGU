@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RIGU SHOP Login</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f4f4f4;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.login-box{
+background:#fff;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 15px rgba(0,0,0,.2);
+width:350px;
+text-align:center;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#ff6600;
+color:#fff;
+border:none;
+border-radius:5px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#e65100;
+}
+
+a{
+text-decoration:none;
+color:#ff6600;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+<h2>RIGU SHOP</h2>
+
+<input type="email" id="email" placeholder="Email">
+
+<input type="password" id="password" placeholder="Password">
+
+<button id="loginBtn">Login</button>
+
+<p>Don't have an account?
+<a href="signup.html">Create Account</a>
+</p>
+
+</div>
+
+<script type="module" src="login.js"></script>
+
+</body>
+</html>
