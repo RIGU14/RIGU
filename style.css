@@ -926,3 +926,85 @@ footer{
     border:none;
     border-top:1px solid #ddd;
 }
+/* ===== ACCOUNT PAGE ===== */
+
+.account-page{
+    min-height:100vh;
+    background:#f4f6f9;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+}
+
+.account-card{
+    width:420px;
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.account-top{
+    background:linear-gradient(135deg,#0066ff,#00a2ff);
+    padding:40px 20px;
+    text-align:center;
+    color:#fff;
+}
+
+.profile-avatar{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    background:#111;
+    color:#fff;
+    font-size:40px;
+    font-weight:bold;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0 auto 15px;
+    border:5px solid #fff;
+}
+
+.account-top h2{
+    margin:10px 0 5px;
+}
+
+.account-top p{
+    opacity:.9;
+}
+
+.account-links{
+    padding:20px;
+}
+
+.account-links a{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    text-decoration:none;
+    color:#333;
+    padding:16px;
+    margin-bottom:10px;
+    border-radius:12px;
+    background:#f7f7f7;
+    transition:.3s;
+    font-weight:500;
+}
+
+.account-links a:hover{
+    background:#0066ff;
+    color:#fff;
+}
+
+#logoutBtn{
+    background:#ffebeb;
+    color:#d50000;
+    font-weight:bold;
+}
+
+#logoutBtn:hover{
+    background:#d50000;
+    color:#fff;
+}
