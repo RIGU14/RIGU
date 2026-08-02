@@ -18,6 +18,8 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 const accountBtn = document.getElementById("accountBtn");
+const avatar = document.getElementById("avatar");
+const userName = document.getElementById("userName");
 
 onAuthStateChanged(auth, (user) => {
 
@@ -27,19 +29,24 @@ onAuthStateChanged(auth, (user) => {
       .charAt(0)
       .toUpperCase();
 
-    accountBtn.innerHTML = `
-      <span id="userAvatar">${firstLetter}</span>
-    `;
+    avatar.textContent = firstLetter;
 
-    accountBtn.href = "account.html";
+    userName.textContent = "";
+
+    accountBtn.onclick = () => {
+      window.location.href = "account.html";
+    };
 
   } else {
 
-    accountBtn.innerHTML = `
-      <i class="fa-regular fa-user"></i> Login
-    `;
+    avatar.innerHTML = `<i class="fa-regular fa-user"></i>`;
 
-    accountBtn.href = "login.html";
+    userName.textContent = "Login";
+
+    accountBtn.onclick = () => {
+      window.location.href = "login.html";
+    };
+
   }
 
 });
