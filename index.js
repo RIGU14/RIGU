@@ -22,11 +22,11 @@ onAuthStateChanged(auth, (user) => {
 
   if (user) {
 
-    const fullName = user.displayName || user.email.split("@")[0];
-    const firstLetter = fullName.charAt(0).toUpperCase();
+    const name = user.displayName || user.email;
+    const firstLetter = name.charAt(0).toUpperCase();
 
-    userAvatar.innerHTML = firstLetter;
-    accountName.textContent = fullName;
+    userAvatar.textContent = firstLetter;
+    accountName.textContent = name;
 
     accountBtn.href = "account.html";
 
@@ -36,6 +36,7 @@ onAuthStateChanged(auth, (user) => {
     accountName.textContent = "Login";
 
     accountBtn.href = "login.html";
+
   }
 
 });
