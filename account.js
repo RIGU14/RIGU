@@ -34,8 +34,9 @@ onAuthStateChanged(auth, (user) => {
 
     avatar.textContent = firstLetter;
 
-    name.textContent = user.displayName || "RIGU User";
+    const userName = user.email.split("@")[0];
 
+name.textContent = userName;
     email.textContent = user.email;
 
   } else {
