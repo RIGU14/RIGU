@@ -26,39 +26,29 @@ const logoutBtn = document.getElementById("logoutBtn");
 
 onAuthStateChanged(auth, (user) => {
 
-  if (user) {
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
 
-    const firstLetter = (user.displayName || user.email)
-      .charAt(0)
-      .toUpperCase();
+  const fullName = user.displayName || user.email.split("@")[0];
 
-    avatar.textContent = firstLetter;
+  avatar.textContent = fullName.charAt(0).toUpperCase();
+  name.textContent = fullName;
+  email.textContent = user.email;
 
-    const userName = user.email.split("@")[0];
+});
 
-if (user.displayName) {
-    name.textContent = user.displayName;
-} else {
-    name.textContent = userName;
-}
-    email.textContent = user.email;
+logoutBtn.addEventListener("click", async (e) => {
 
-  } else {
+  e.preventDefault();
+
+  if (confirm("Are you sure you want to logout?")) {
+
+    await signOut(auth);
 
     window.location.href = "login.html";
 
   }
-
-});
-
-logoutBtn.addEventListener("click", (e) => {
-
-  e.preventDefault();
-
-  signOut(auth).then(() => {
-
-    window.location.href = "login.html";
-
-  });
 
 });
