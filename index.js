@@ -7,7 +7,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
+apiKey: "AIzaSyCqw2NlWRRXftz5p9FSNh3GT7Z0tnLlKIc",
   authDomain: "rigu-shop.firebaseapp.com",
   projectId: "rigu-shop",
   storageBucket: "rigu-shop.firebasestorage.app",
