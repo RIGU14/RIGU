@@ -36,7 +36,11 @@ onAuthStateChanged(auth, (user) => {
 
     const userName = user.email.split("@")[0];
 
-name.textContent = userName;
+if (user.displayName) {
+    name.textContent = user.displayName;
+} else {
+    name.textContent = userName;
+}
     email.textContent = user.email;
 
   } else {
