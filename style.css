@@ -376,3 +376,89 @@ footer{
 }
 
 }
+.account-menu{
+    position:relative;
+}
+
+#accountBtn{
+    text-decoration:none;
+    color:#fff;
+}
+
+#userAvatar{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#ffffff;
+    color:#1565c0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    font-size:18px;
+}
+
+.account-dropdown{
+    position:absolute;
+    top:55px;
+    right:0;
+    width:260px;
+    background:#fff;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    display:none;
+    overflow:hidden;
+    z-index:999;
+}
+
+.account-dropdown.active{
+    display:block;
+}
+
+.account-header{
+    text-align:center;
+    padding:20px;
+    background:#f5f5f5;
+}
+
+.avatar-large{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:#1565c0;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    font-weight:bold;
+    margin:auto;
+    margin-bottom:10px;
+}
+
+.account-header h3{
+    margin:0;
+    font-size:18px;
+}
+
+.account-header p{
+    font-size:13px;
+    color:#666;
+    word-break:break-word;
+}
+
+.account-dropdown a{
+    display:block;
+    padding:14px 18px;
+    color:#333;
+    text-decoration:none;
+}
+
+.account-dropdown a:hover{
+    background:#f0f0f0;
+}
+
+.account-dropdown hr{
+    border:none;
+    border-top:1px solid #ddd;
+}
