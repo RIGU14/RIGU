@@ -1,8 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-import {
-  getAuth,
-  onAuthStateChanged
-} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCqw2NlWRRXftz5p9FSNh3GT7Z0tnLlKIc",
@@ -18,35 +15,27 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 const accountBtn = document.getElementById("accountBtn");
-const avatar = document.getElementById("avatar");
-const userName = document.getElementById("userName");
+const userAvatar = document.getElementById("userAvatar");
+const accountName = document.getElementById("accountName");
 
 onAuthStateChanged(auth, (user) => {
 
   if (user) {
 
-    const firstLetter = (user.displayName || user.email)
-      .charAt(0)
-      .toUpperCase();
+    const fullName = user.displayName || user.email.split("@")[0];
+    const firstLetter = fullName.charAt(0).toUpperCase();
 
-    avatar.textContent = firstLetter;
+    userAvatar.innerHTML = firstLetter;
+    accountName.textContent = fullName;
 
-    userName.textContent = "";
-
-    accountBtn.onclick = () => {
-      window.location.href = "account.html";
-    };
+    accountBtn.href = "account.html";
 
   } else {
 
-    avatar.innerHTML = `<i class="fa-regular fa-user"></i>`;
+    userAvatar.innerHTML = `<i class="fa-regular fa-user"></i>`;
+    accountName.textContent = "Login";
 
-    userName.textContent = "Login";
-
-    accountBtn.onclick = () => {
-      window.location.href = "login.html";
-    };
-
+    accountBtn.href = "login.html";
   }
 
 });
